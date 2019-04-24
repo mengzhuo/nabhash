@@ -1,6 +1,9 @@
 # nabhash
 
+[![GoDoc Reference](https://img.shields.io/badge/godoc-reference-5272B4.svg?style=flat-square)](https://godoc.org/github.com/mengzhuo/nabhash)
+
 NABHash is an extremely fast Non-crypto-safe AES Based Hash algorithm.
+
 See https://nabhash.org for more.
 
 ## Benchmark
@@ -29,3 +32,10 @@ BenchmarkNABHash/16384     	 3000000	       419 ns/op	39094.42 MB/s
 BenchmarkNABHash/32768     	 2000000	       739 ns/op	44323.84 MB/s
 BenchmarkNABHash/65536     	 1000000	      1391 ns/op	47086.78 MB/s
 ```
+
+## Acknowledgements
+
+NABHash makes use of the following open source projects:
+
+* [Go](https://golang.org)
+* [Meow](https://github.com/mmcloughlin/meow)
