@@ -1,0 +1,57 @@
+#include "textflag.h"
+
+// func blockAESNI(s *state, p []byte)
+TEXT ·blockAESNI(SB), 0, $0-32
+	MOVQ	s+0(FP), DI
+	MOVQ	p_base+8(FP), SI
+	MOVQ	p_len+16(FP), AX
+
+	MOVOU	0(DI), X0
+	MOVOU	16(DI), X1
+	MOVOU	32(DI), X2
+	MOVOU	48(DI), X3
+
+loop:
+	VAESENC	0(SI),  X0, X0
+	VAESENC	16(SI), X1, X1
+	VAESENC	32(SI), X2, X2
+	VAESENC	48(SI), X3, X3
+
+	ADDQ    $64, SI
+	SUBQ	$64, AX
+	CMPQ	AX, $64
+	JGE		loop
+
+	MOVOU	X0, 0(DI)
+	MOVOU	X1, 16(DI)
+	MOVOU	X2, 32(DI)
+	MOVOU	X3, 48(DI)
+	RET
+
+// func finalAESNI(s *state, l uint64)
+TEXT ·finalAESNI(SB), 0, $0-32
+	MOVQ	s+0(FP), DI
+	MOVQ	l+8(FP), SI
+
+	MOVQ	SI, X4
+
+	MOVOU	0(DI), X0
+	MOVOU	16(DI), X1
+	MOVOU	32(DI), X2
+	MOVOU	48(DI), X3
+
+	PXOR	X4, X0
+	PXOR	X4, X1
+	PXOR	X4, X2
+	PXOR	X4, X3
+
+	VAESENC	X1, X0, X0
+	VAESENC	X3, X2, X1
+	VAESENC	X1, X0, X0
+
+	VAESENC	X0, X0, X0
+	VAESENC	X0, X0, X0
+	VAESENC	X0, X0, X0
+
+	MOVOU	X0, 0(DI)
+	RET
