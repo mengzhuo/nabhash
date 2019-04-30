@@ -1,0 +1,6 @@
+github.com/dgryski/go-highway v0.0.0-20180115164416-621855199094 h1:GeoN+Yu+ALS8CyGqWOSD4PLvRT9xeqSpbq6QvjmbPok=
+github.com/dgryski/go-highway v0.0.0-20180115164416-621855199094/go.mod h1:k3huN2j0rapqSEtGr9Yy2/RnTtn4jTiufYz6j6Kv+wM=
+github.com/intel-go/cpuid v0.0.0-20181003105527-1a4a6f06a1c6 h1:XboatR7lasl05yel5hNXF7kQBw2oFUGdMztcgisfhNU=
+github.com/intel-go/cpuid v0.0.0-20181003105527-1a4a6f06a1c6/go.mod h1:RmeVYf9XrPRbRc3XIx0gLYA8qOFvNoPOfaEZduRlEp4=
+golang.org/x/sys v0.0.0-20190426135247-a129542de9ae h1:mQLHiymj/JXKnnjc62tb7nD5pZLs940/sXJu+Xp3DBA=
+golang.org/x/sys v0.0.0-20190426135247-a129542de9ae/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
