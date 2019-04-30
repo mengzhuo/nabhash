@@ -31,7 +31,7 @@ loop:
 	RET
 
 // func finalAESNI(s *state, l uint64)
-TEXT ·finalAESNI(SB), 0, $0-32
+TEXT ·finalAESNI(SB), 0, $0-16
 	MOVQ	s+0(FP), DI
 	MOVQ	l+8(FP), SI
 
