@@ -2,7 +2,7 @@
 
 [![GoDoc Reference](https://img.shields.io/badge/godoc-reference-5272B4.svg?style=flat-square)](https://godoc.org/github.com/mengzhuo/nabhash)
 
-NABHash is an extremely fast Non-crypto-safe AES Based Hash algorithm.
+NABHash is an extremely fast Non-crypto-safe AES Based Hash algorithm for Big Data.
 
 See https://nabhash.org for more.
 
