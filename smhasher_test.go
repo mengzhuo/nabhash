@@ -29,8 +29,8 @@ func (s *HashSet) check(t *testing.T) {
 
 func (s *HashSet) add(x []byte) {
 	s.m[string(s.d.Sum(x))] = struct{}{}
-	s.n++
 	s.d.Reset()
+	s.n++
 }
 
 // All 0-3 byte strings have distinct hashes.
