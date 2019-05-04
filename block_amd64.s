@@ -20,7 +20,7 @@ loop:
 	ADDQ    $64, SI
 	SUBQ	$64, AX
 	CMPQ	AX, $64
-	JGE		loop
+	JGE	loop
 
 	VMOVDQU	X0, 0(DI)
 	VMOVDQU	X1, 16(DI)
