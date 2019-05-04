@@ -1,7 +1,7 @@
 # nabhash
 
 [![GoDoc Reference](https://img.shields.io/badge/godoc-reference-5272B4.svg?style=flat-square)](https://godoc.org/github.com/mengzhuo/nabhash)
-[![Build Status](https://travis-ci.org/mengzhuo/nabhash/builds#)](https://travis-ci.org/mengzhuo/nabhash.svg?branch=master)
+[![Build Status](https://travis-ci.org/mengzhuo/nabhash.svg?branch=master)](https://travis-ci.org/mengzhuo/nabhash/builds)
 
 NABHash is an extremely fast Non-crypto-safe AES Based Hash algorithm for Big Data.
 
