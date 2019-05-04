@@ -2,4 +2,5 @@ language: go
 
 go:
     - 1.x
-    - master
+script:
+    go test -v -short
