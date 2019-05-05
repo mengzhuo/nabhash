@@ -72,20 +72,12 @@ func (d *digest) Write(p []byte) (nn int, err error) {
 }
 
 func (d *digest) Sum(b []byte) []byte {
-	hash := d.checkSum()
-	return append(b, hash[:]...)
-}
-
-func (d *digest) checkSum() (digest [Size]byte) {
 	l := d.length
 	if l%BlockSize != 0 {
 		d.Write(zeroData[l%BlockSize:])
 	}
-
 	final(&d.h, l)
-	copy(digest[:], d.h[:])
-
-	return
+	return append(b, d.h[:Size]...)
 }
 
 func (d *digest) Reset() {
