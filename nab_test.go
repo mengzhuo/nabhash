@@ -147,10 +147,11 @@ func BenchmarkNABHash(b *testing.B) {
 			buf := make([]byte, i)
 			h := New()
 			b.SetBytes(int64(i))
+			s := make([]byte, 16)
 			b.ResetTimer()
 			for j := 0; j < b.N; j++ {
 				h.Write(buf)
-				h.Sum(nil)
+				h.Sum(s[:0])
 			}
 			return
 		})
