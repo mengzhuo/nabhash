@@ -76,8 +76,8 @@ func (d *digest) Sum(b []byte) []byte {
 
 func (d *digest) checkSum() (digest [Size]byte) {
 	l := d.length
-	var tmp [BlockSize]byte
 	if l%BlockSize != 0 {
+		var tmp [BlockSize]byte
 		d.Write(tmp[l%BlockSize:])
 	}
 	if d.length%BlockSize != 0 {
