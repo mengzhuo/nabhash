@@ -81,9 +81,6 @@ func (d *digest) checkSum() (digest [Size]byte) {
 	if l%BlockSize != 0 {
 		d.Write(zeroData[l%BlockSize:])
 	}
-	if d.length%BlockSize != 0 {
-		panic("d.remain != 0")
-	}
 
 	final(&d.h, l)
 	copy(digest[:], d.h[:])

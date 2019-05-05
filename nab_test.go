@@ -14,6 +14,16 @@ import (
 
 const ext = "nabsum"
 
+func TestSizes(t *testing.T) {
+	h := New()
+	if h.Size() != Size {
+		t.Fatalf("size not match %d %d", h.Size(), Size)
+	}
+	if h.BlockSize() != BlockSize {
+		t.Fatalf("blocksize not match %d %d", h.BlockSize(), BlockSize)
+	}
+}
+
 func TestFromData(t *testing.T) {
 
 	cur, err := os.Getwd()
