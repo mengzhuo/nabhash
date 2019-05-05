@@ -14,6 +14,8 @@ const (
 	BlockSize = 64
 )
 
+var zeroData = make([]byte, BlockSize)
+
 var initState = state{
 	0x5A, 0x82, 0x79, 0x99, 0x6E, 0xD9, 0xEB, 0xA1,
 	0x8F, 0x1B, 0xBC, 0xDC, 0xCA, 0x62, 0xC1, 0xD6,
@@ -77,8 +79,7 @@ func (d *digest) Sum(b []byte) []byte {
 func (d *digest) checkSum() (digest [Size]byte) {
 	l := d.length
 	if l%BlockSize != 0 {
-		var tmp [BlockSize]byte
-		d.Write(tmp[l%BlockSize:])
+		d.Write(zeroData[l%BlockSize:])
 	}
 	if d.length%BlockSize != 0 {
 		panic("d.remain != 0")
