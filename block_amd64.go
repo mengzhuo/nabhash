@@ -9,8 +9,8 @@ func init() {
 	}
 }
 
-// go:noesacpe
+//go:noescape
 func blockAESNI(s *state, p []byte)
 
-// go:noesacpe
+//go:noescape
 func finalAESNI(s *state, l uint64)
