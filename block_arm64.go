@@ -9,8 +9,8 @@ func init() {
 	}
 }
 
-// go:noesacpe
+//go:noescape
 func blockNEON(s *state, p []byte)
 
-// go:noesacpe
+//go:noescape
 func finalNEON(s *state, l uint64)
