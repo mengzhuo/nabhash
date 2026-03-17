@@ -1,5 +1,5 @@
 module github.com/mengzhuo/nabhash
 
-go 1.12
+go 1.25.0
 
-require golang.org/x/sys v0.0.0-20200930185726-fdedc70b468f
+require golang.org/x/sys v0.42.0
